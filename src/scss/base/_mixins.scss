@@ -1,0 +1,25 @@
+@mixin responsive($device) {
+    @if $device == phone {
+        @media only screen and (min-width: $phone) {
+        @content;
+        }
+    }
+
+    @if $device == tablet {
+        @media only screen and (min-width: $tablet) {
+            @content;
+        }
+    }
+
+    @if $device == desktop {
+        @media only screen and (min-width: $desktop) {
+            @content;
+        }
+    }
+}
+
+@mixin grid($columns, $gap) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $gap;
+}
