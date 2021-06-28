@@ -3,7 +3,7 @@
     @include responsive(tablet) {
         @include grid(2, $separation);
         column-gap: $separation;
-        padding: $separation*1.4 0;
+        padding: $separation*1.5 0;
     }
 
     .image {

@@ -1,0 +1,13 @@
+.bg-red {
+    background-color: $red;
+}
+
+footer {
+    padding: $separation/3;
+    text-align: center;
+
+    p {
+        margin: 0;
+        color: $white;
+    }
+}

@@ -358,7 +358,7 @@ p {
 }
 
 .container {
-  max-width: 85rem;
+  max-width: 80rem;
   width: 95%;
   margin: 0 auto;
 }
@@ -480,7 +480,7 @@ h3 {
     grid-template-columns: repeat(2, 1fr);
     gap: 3.5rem;
     column-gap: 3.5rem;
-    padding: 4.9rem 0;
+    padding: 5.25rem 0;
   }
 }
 .info-festival .image {
@@ -652,4 +652,87 @@ body.hidden-body {
 
 .bg-green {
   background-color: #4CB8B3;
+}
+
+.bg-red {
+  background-color: #F53756;
+}
+
+.bg-white {
+  background-color: #FFF;
+}
+
+.bg-purple {
+  background-color: #752F97;
+}
+
+.tickets {
+  padding: 3.5rem 0;
+}
+.tickets h3 {
+  text-align: center;
+  color: #FFF;
+  font-weight: 900;
+}
+
+.tickets-content {
+  padding: 1.75rem 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.75rem;
+  justify-items: center;
+}
+@media only screen and (min-width: 768px) {
+  .tickets-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+}
+.tickets-content .basic, .tickets-content .premium {
+  width: 100%;
+}
+.tickets-content .basic p, .tickets-content .premium p {
+  text-align: center;
+  color: #FFF;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.table {
+  width: 100%;
+  border-spacing: 0;
+}
+.table thead, .table tfoot {
+  text-align: center;
+}
+.table th {
+  color: #FFF;
+}
+.table td {
+  border-bottom: 0.5px solid #e1e1e1;
+  font-size: 1.35rem;
+}
+.table tr:last-of-type td {
+  border: none;
+}
+.table th, .table td {
+  padding: 0.875rem;
+}
+.table tfoot td {
+  color: #FFF;
+  font-size: 2rem;
+}
+
+.bg-red {
+  background-color: #F53756;
+}
+
+footer {
+  padding: 1.1666666667rem;
+  text-align: center;
+}
+footer p {
+  margin: 0;
+  color: #FFF;
 }

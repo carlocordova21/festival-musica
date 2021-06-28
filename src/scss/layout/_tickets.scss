@@ -1,3 +1,84 @@
+//Colors
 .bg-green {
     background-color: $green;
+}
+
+.bg-red {
+    background-color: $red;
+}
+
+.bg-white {
+    background-color: $white;
+}
+
+.bg-purple {
+    background-color: $purple;
+}
+
+//Contenido
+.tickets {
+    padding: $separation 0;
+
+    h3 {
+        text-align: center;
+        color: $white;
+        font-weight: $xbold;
+    }
+}
+
+.tickets-content {
+    padding: $separation/2 0;
+    @include responsive(tablet) {
+        @include grid(2, $separation/2);
+    };
+
+    @include grid(1, $separation/2);
+
+    justify-items: center; 
+    .basic, .premium {
+        width: 100%;
+        p {
+            text-align: center;
+            color: $white;
+            font-weight: $slim;
+            font-size: 2rem;
+        }
+    }
+}
+
+.table {
+    width: 100%;
+    border-spacing: 0;
+
+    thead, tfoot {
+        text-align: center;
+    }
+
+    th {
+        color: $white;
+    }
+
+    td {
+        border-bottom: .5px solid #e1e1e1;
+        font-size: 1.35rem;
+    }
+
+    tr {
+        &:last-of-type {
+            td {
+                border: none;
+            }
+        }
+    }
+
+    th, td {
+        padding: $separation/4;
+    }
+
+    tfoot {
+        td {
+            color: $white;
+            font-size: 2rem;
+        }
+    }
 }
