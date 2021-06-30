@@ -1,10 +1,10 @@
-# #Ignora archivos node
-# node_modules
-# package-lock.json
-# package.json
+#Ignora archivos node
+node_modules
+package-lock.json
+package.json
 
-# #Ignora src
-# src
+#Ignora src
+src
 
-# #Ignora gulpfile.js
-# gulpfile.js
+#Ignora gulpfile.js
+gulpfile.js
