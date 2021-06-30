@@ -17,6 +17,12 @@
             margin-bottom: 0;
         }
     }
+
+    &.fixed {
+        position: fixed;
+        width: 100%;
+        box-shadow: 0 0.2rem 0.3rem #444;
+    }
 }
 
 .main-nav {

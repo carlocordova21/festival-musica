@@ -1,4 +1,4 @@
-.info-festival {
+ .info-festival {
     padding: $separation/2 0;
     @include responsive(tablet) {
         @include grid(2, $separation);

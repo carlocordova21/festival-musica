@@ -18,7 +18,7 @@
 .stage-container {
     @include responsive(tablet) {
         @include grid(2, 4rem);
-    }
+    } 
 
     .bg-yellow {
         background-color: $yellow;

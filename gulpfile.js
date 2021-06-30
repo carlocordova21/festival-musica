@@ -8,6 +8,16 @@ const concat = require('gulp-concat');
 
 sass.compiler = require('dart-sass');
 
+//Utilidades CSS
+const autoprefixer = require('autoprefixer');
+const postcss = require('gulp-postcss');
+const cssnano = require('cssnano');
+const sourcemaps = require('gulp-sourcemaps');
+
+//Utilidades JS
+const terser = require('gulp-terser-js');
+const rename = require('gulp-rename');
+
 const paths = {
     images: 'src/img/**/*',
     scss: './src/scss/**/*.scss',
@@ -16,7 +26,10 @@ const paths = {
 
 function css() {
     return src(paths.scss)
+        .pipe(sourcemaps.init())
         .pipe(sass())
+        .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(sourcemaps.write('.'))
         .pipe(dest('./build/css'));
 }
 
@@ -30,7 +43,11 @@ function minifyCSS() {
 
 function javascript() {
     return src(paths.js)
+        .pipe(sourcemaps.init())
         .pipe(concat('bundle.js'))
+        .pipe(terser())
+        .pipe(sourcemaps.write('.'))
+        .pipe(rename({ suffix: '.min' }))
         .pipe(dest('./build/js'));
 }
 
@@ -45,7 +62,7 @@ function webpimg() {
     return src(paths.images)
     .pipe(webp())
     .pipe(dest('./build/img'))
-    .pipe(notify({ message: 'Version webp' }));
+    .pipe(notify({ messagek: 'Version webp' }));
 }
 
 function watchFiles() {
@@ -57,10 +74,7 @@ function watchFiles() {
 }
 
 exports.css = css;
-exports.minifyCSS = minifyCSS;
-exports.javascript = javascript;
 exports.minifyImages = minifyImages;
 exports.watchFiles = watchFiles;
-exports.webpimg = webpimg;
 
 exports.default = series (css, javascript, minifyImages, webpimg, watchFiles);
